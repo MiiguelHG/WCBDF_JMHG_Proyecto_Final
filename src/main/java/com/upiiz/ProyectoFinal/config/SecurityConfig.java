@@ -37,6 +37,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         return httpSecurity
+                .cors(Customizer.withDefaults())
                 .csrf(csrf -> csrf
                         .ignoringRequestMatchers("/api/v1/invoices/**")
                                 .ignoringRequestMatchers("/api/v1/users")// Ignorar CSRF en rutas
