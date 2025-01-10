@@ -1,6 +1,7 @@
 com\upiiz\ProyectoFinal\ProyectoFinalApplication.class
 com\upiiz\ProyectoFinal\controllers\GlobalExceptionHandler.class
 com\upiiz\ProyectoFinal\entities\CustomResponse.class
+com\upiiz\ProyectoFinal\entities\InvoiceEntity$InvoiceEntityBuilder.class
 com\upiiz\ProyectoFinal\repositories\InvoiceRepository.class
 com\upiiz\ProyectoFinal\repositories\UserRepository.class
 com\upiiz\ProyectoFinal\entities\UserEntity$UserEntityBuilder.class
