@@ -3,6 +3,7 @@ package com.upiiz.ProyectoFinal.controllers;
 import com.upiiz.ProyectoFinal.entities.CustomResponse;
 import com.upiiz.ProyectoFinal.entities.UserEntity;
 import com.upiiz.ProyectoFinal.services.UserService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.Link;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,7 @@ import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 
 @RestController
 @RequestMapping("/api/v1/users")
+@Tag(name = "Users", description = "API para administrar los usuarios")
 public class UserController {
     @Autowired
     private UserService userService;
@@ -35,10 +37,15 @@ public class UserController {
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
             }
 
+            if (!user.getPassword().equals(userdb.getPassword())) {
+                CustomResponse<UserEntity> response = new CustomResponse<>(0, "Contraseña incorrecta", null, links);
+                return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(response);
+            }
+
             CustomResponse<UserEntity> response = new CustomResponse<>(1, "Usuario encontrado", userdb, links);
             return ResponseEntity.status(HttpStatus.OK).body(response);
         } catch (Exception e) {
-            CustomResponse<UserEntity> response = new CustomResponse<>(0, "Error al buscar el usuario", null, links);
+            CustomResponse<UserEntity> response = new CustomResponse<>(0, "Error al buscar el usuario " + e, null, links);
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(response);
         }
     }
