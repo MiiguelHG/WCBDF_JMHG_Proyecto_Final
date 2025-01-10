@@ -1,3 +1,4 @@
+com\upiiz\ProyectoFinal\config\WebConfig$1.class
 com\upiiz\ProyectoFinal\ProyectoFinalApplication.class
 com\upiiz\ProyectoFinal\controllers\GlobalExceptionHandler.class
 com\upiiz\ProyectoFinal\entities\CustomResponse.class
@@ -7,6 +8,7 @@ com\upiiz\ProyectoFinal\entities\UserEntity$UserEntityBuilder.class
 com\upiiz\ProyectoFinal\controllers\UserController.class
 com\upiiz\ProyectoFinal\entities\InvoiceEntity.class
 com\upiiz\ProyectoFinal\config\OpenApiConfiguration.class
+com\upiiz\ProyectoFinal\config\WebConfig.class
 com\upiiz\ProyectoFinal\services\UserService.class
 com\upiiz\ProyectoFinal\config\SecurityConfig.class
 com\upiiz\ProyectoFinal\controllers\InvoiceController.class
